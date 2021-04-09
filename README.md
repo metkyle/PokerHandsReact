@@ -1,6 +1,9 @@
 # PokerHandsReact
-Steps
-1. Clone repo - https://github.com/metkyle/PokerHandsReact.git
+A small poker hand comparison game.
+Compare two poker hands against each other and declare a winner
+
+Steps to Use
+1. Clone or download repo - https://github.com/metkyle/PokerHandsReact.git
 2. Open in Visual Studio
 3. Click the "IIS Express" button in the top toolbar
 4. Accept IIS Express SSL Cert if asked
