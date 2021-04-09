@@ -104,7 +104,7 @@ class PokerHand extends React.Component {
             deckCopy.splice(card10Index, 1);
             hand2 = [card6, card7, card8, card9, card10];
         }
-        if (deckCopy.length <= 10) {
+        if (deckCopy.length < 2) {
             this.shuffleDeckHandler();
         }
         const winningHand = this.findWinningHand(hand, hand2);
@@ -117,7 +117,21 @@ class PokerHand extends React.Component {
         let hand1Rank = this.rankHand(hand1);
         let hand2Rank = this.rankHand(hand2);
         let rankArray = ["N/A", "Royal Flush", "Straight Flush", "Four of a Kind", "Full House", "Flush", "Straight", "Three  of a Kind", "Two Pair", "One Pair", "Play Again"];
-
+        let cardFaces = [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "Jack",
+            "Queen",
+            "King",
+            "Aces"
+        ];
         if (hand1Rank < hand2Rank) {
             console.log("Player1 Wins");
             return { player: this.state.player1Name, value: rankArray[hand1Rank] }
@@ -128,6 +142,22 @@ class PokerHand extends React.Component {
         }
         else {
             console.log("Draw");
+            let hand1Value = [];
+            let hand2Value = [];
+            for (let i = 0; i < hand1.length; i++) {
+                hand1Value.push(hand1[i].numValue);
+                hand2Value.push(hand2[i].numValue);
+            }
+            let max1 = Math.max(...hand1Value);
+            let max2 = Math.max(...hand2Value);
+            if (max1 > max2) {
+                console.log(cardFaces);
+                return {player: this.state.player1Name, value: cardFaces[max1-2].concat(' ', 'High')/*max1.toString()*/}
+            }
+            if (max1 < max2) {
+                console.log(cardFaces);
+                return { player: this.state.player2Name, value: cardFaces[max2 - 2].concat(' ', 'High') /*max2.toString()*/ }
+            }
             return { player: "Draw", value: rankArray[10] }
         }
     };
