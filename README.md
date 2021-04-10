@@ -1,5 +1,5 @@
 # PokerHandsReact
-Domain - Poker Hands Interface - Web UI (SPA)
+**Domain - Poker Hands Interface - Web UI (SPA)**
 A small poker hand comparison game.
 Compare two poker hands against each other and declare a winner.
 Itrellis Interview Project
