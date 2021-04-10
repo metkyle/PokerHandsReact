@@ -39,7 +39,7 @@ class PokerHand extends React.Component {
             "Jack",
             "Queen",
             "King",
-            "Aces"
+            "Ace"
         ];
         const numericalValues = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"];
         const playerName = ["Jack", "Cindy", "Phil", "Cassie", "Jennifer", "Jeff"]
@@ -152,7 +152,7 @@ class PokerHand extends React.Component {
             let max2 = Math.max(...hand2Value);
             if (max1 > max2) {
                 console.log(cardFaces);
-                return {player: this.state.player1Name, value: cardFaces[max1-2].concat(' ', 'High')/*max1.toString()*/}
+                return { player: this.state.player1Name, value: cardFaces[max1 - 2].concat(' ', 'High')/*max1.toString()*/ }
             }
             if (max1 < max2) {
                 console.log(cardFaces);
@@ -313,12 +313,11 @@ class PokerHand extends React.Component {
     }
 }
 
-
 const Hand = ({ handCards, handCards2, p1, p2 }) => {
     return (
         <div>
-            <h3>{p1}'s Hand - [{handCards[0].name}] [{handCards[1].name}] [{handCards[2].name}] [{handCards[3].name}] [{handCards[4].name}]</h3>
-            <h3>{p2}'s Hand - [{handCards2[0].name}] [{handCards2[1].name}] [{handCards2[2].name}] [{handCards2[3].name}] [{handCards2[4].name}]</h3>
+            <h3>{p1}'s Hand - <CardImage cardName={handCards[0].name} />  <CardImage cardName={handCards[1].name} />  <CardImage cardName={handCards[2].name} />  <CardImage cardName={handCards[3].name} />  <CardImage cardName={handCards[4].name} /></h3>
+            <h3>{p2}'s Hand -  <CardImage cardName={handCards2[0].name} /> <CardImage cardName={handCards2[1].name} /> <CardImage cardName={handCards2[2].name} /> <CardImage cardName={handCards2[3].name} /> <CardImage cardName={handCards2[4].name} /></h3>
         </div>
     );
 }
@@ -330,6 +329,169 @@ const Controller = ({ shuffle, dealHand }) => {
             <button className="btn btn-primary ml-1" onClick={dealHand}>Deal Hand </button>
         </div>
     );
+}
+
+const CardImage = ({ cardName }) => {
+    let card;
+    switch (cardName) {
+        case "2 of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/2S.png" />;
+            break;
+        case "3 of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/3S.png" />;
+            break;
+        case "4 of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/4S.png" />;
+            break;
+        case "5 of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/5S.png" />;
+            break;
+        case "6 of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/6S.png" />;
+            break;
+        case "7 of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/7S.png" />;
+            break;
+        case "8 of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/8S.png" />;
+            break;
+        case "9 of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/9S.png" />;
+            break;
+        case "10 of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/10S.png" />;
+            break;
+        case "Jack of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/JS.png" />;
+            break;
+        case "Queen of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/QS.png" />;
+            break;
+        case "King of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/KS.png" />;
+            break;
+        case "Ace of Spades":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/AS.png" />;
+            break;
+        case "2 of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/2C.png" />;
+            break;
+        case "3 of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/3C.png" />;
+            break;
+        case "4 of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/4C.png" />;
+            break;
+        case "5 of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/5C.png" />;
+            break;
+        case "6 of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/6C.png" />;
+            break;
+        case "7 of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/7C.png" />;
+            break;
+        case "8 of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/8C.png" />;
+            break;
+        case "9 of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/9C.png" />;
+            break;
+        case "10 of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/10C.png" />;
+            break;
+        case "Jack of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/JC.png" />;
+            break;
+        case "Queen of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/QC.png" />;
+            break;
+        case "King of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/KC.png" />;
+            break;
+        case "Ace of Clubs":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/AC.png" />;
+            break;
+        case "2 of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/2H.png" />;
+            break;
+        case "3 of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/3H.png" />;
+            break;
+        case "4 of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/4H.png" />;
+            break;
+        case "5 of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/5H.png" />;
+            break;
+        case "6 of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/6H.png" />;
+            break;
+        case "7 of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/7H.png" />;
+            break;
+        case "8 of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/8H.png" />;
+            break;
+        case "9 of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/9H.png" />;
+            break;
+        case "10 of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/10H.png" />;
+            break;
+        case "Jack of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/JH.png" />;
+            break;
+        case "Queen of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/QH.png" />;
+            break;
+        case "King of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/KH.png" />;
+            break;
+        case "Ace of Hearts":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/AH.png" />;
+            break;
+        case "2 of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/2D.png" />;
+            break;
+        case "3 of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/3D.png" />;
+            break;
+        case "4 of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/4D.png" />;
+            break;
+        case "5 of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/5D.png" />;
+            break;
+        case "6 of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/6D.png" />;
+            break;
+        case "7 of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/7D.png" />;
+            break;
+        case "8 of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/8D.png" />;
+            break;
+        case "9 of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/9D.png" />;
+            break;
+        case "10 of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/10D.png" />;
+            break;
+        case "Jack of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/JD.png" />;
+            break;
+        case "Queen of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/QD.png" />;
+            break;
+        case "King of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/KD.png" />;
+            break;
+        case "Ace of Diamonds":
+            card = <img style={{ width: "150px", height: "200px" }} src="../images/AD.png" />;
+            break;
+    }
+    return (<span>{card}</span>);
 }
 
 ReactDOM.render(<PokerHand />, document.getElementById('content'));
