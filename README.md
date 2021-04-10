@@ -1,6 +1,8 @@
 # PokerHandsReact
+Domain - Poker Hands Interface - Web UI (SPA)
 A small poker hand comparison game.
-Compare two poker hands against each other and declare a winner
+Compare two poker hands against each other and declare a winner.
+Itrellis Interview Project
 
 Steps to Use
 1. Clone or download repo - https://github.com/metkyle/PokerHandsReact.git
